@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  font-size: 25px;
+  height: 100px;
+}
+
+.input {
+  width: 20rem;
+  height: 50px;
+  font-size: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.input:disabled {
+  background-color: rgb(176, 170, 170);
+}

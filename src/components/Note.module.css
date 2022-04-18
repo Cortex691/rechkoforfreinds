@@ -1,0 +1,6 @@
+.note {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-size: 0.7rem;
+}

@@ -67,7 +67,7 @@ const StartPage = () => {
   const copyHandler = () => {
     console.log(word);
     console.log(name);
-    const copyValue = `localhost:3000/${name}/${word}`;
+    const copyValue = `www.rechkoforfriends.com/${name}/${word}`;
     navigator.clipboard.writeText(copyValue);
     console.log(copyValue);
     setIsLinkCopied(true);

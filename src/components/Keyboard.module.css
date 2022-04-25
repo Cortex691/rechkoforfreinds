@@ -46,10 +46,11 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  background: #d3d6da;
+  background: rgb(129 131 132);
   padding: 1rem 0.52rem;
   border: none;
   text-transform: uppercase;
+  color: white;
 }
 .keyCorrect {
   background: #6aaa64;
@@ -62,6 +63,6 @@ button {
 }
 
 .keyAbsent {
-  background: #787c7e;
+  background: rgb(58 58 60);
   color: #fff;
 }

@@ -1,12 +1,13 @@
 import { useState, useEffect, useMemo } from "react";
-import Paragraph from "./Paragraph";
 
 import validWords from "../validWords";
 // import classes from "./Game.module.css";
 import "../App.css";
 import Keyboard from "./Keyboard";
+import Modal from "./Modal";
 
 const GameBoard = (props) => {
+  const [modalMsg, setModalMsg] = useState(null);
   const [boardData, setBoardData] = useState(
     JSON.parse(localStorage.getItem(`board-data-${props.targetWord}`))
   );
@@ -85,10 +86,11 @@ const GameBoard = (props) => {
     }
     if (matchCount === 5) {
       status = "WIN";
-      handleMessage("Браво");
+
+      setModalMsg("Браво!");
     } else if (rowIndex + 1 === 6) {
       status = "LOST";
-      handleMessage(boardData.solution);
+      setModalMsg("Изгубили сте.");
     }
     boardRowStatus.push(rowStatus);
     boardWords[rowIndex] = word;
@@ -165,10 +167,21 @@ const GameBoard = (props) => {
     }
   }, [boardData, props.targetWord]);
 
+  const closeModal = () => {
+    setModalMsg();
+  };
+
   return (
     <div className="container">
       <p className="para">Ријешите ријеч коју вам је задао/ла {props.name}</p>
       {message && <div className="message">{message}</div>}
+      {modalMsg && (
+        <Modal
+          closeModal={closeModal}
+          message={modalMsg}
+          word={props.targetWord}
+        ></Modal>
+      )}
       <div className="cube">
         {[0, 1, 2, 3, 4, 5].map((row, rowIndex) => (
           <div

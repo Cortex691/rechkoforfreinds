@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 .btnText {
   color: white;
   text-decoration: none;
@@ -5,4 +7,41 @@
 
 .note {
   margin: 0;
+}
+
+.para {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+
+.para1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 45px;
+}
+
+.cortex {
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  color: white;
+  text-decoration: underline;
+  font-weight: 200;
+  text-transform: lowercase;
+  font-size: 1rem;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.rechko {
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 120;
+  text-decoration: underline;
+  padding: 3px;
 }

@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
 body {
   margin: 0;
-  background-color: #161616;
+  background-color: rgb(18 18 19);
 }

@@ -167,7 +167,7 @@ const GameBoard = (props) => {
 
   return (
     <div className="container">
-      <Paragraph>Ријешите ријеч коју вам је задао/ла {props.name}</Paragraph>
+      <p className="para">Ријешите ријеч коју вам је задао/ла {props.name}</p>
       {message && <div className="message">{message}</div>}
       <div className="cube">
         {[0, 1, 2, 3, 4, 5].map((row, rowIndex) => (

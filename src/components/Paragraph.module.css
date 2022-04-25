@@ -3,11 +3,12 @@
   justify-content: center;
   align-items: center;
   color: white;
+  margin-top: 25px;
 }
 
 .para {
   margin: 8px 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* .paraDiv {

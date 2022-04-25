@@ -11,8 +11,9 @@
 
 .input {
   width: 20rem;
-  height: 50px;
+  height: 70px;
   font-size: 2rem;
+  border: 1px none transparent;
   border-radius: 10px;
   text-align: center;
 }

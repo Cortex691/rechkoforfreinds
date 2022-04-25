@@ -10,8 +10,8 @@
   justify-content: center;
   width: 20rem;
   height: 60px;
-  background-color: green;
-  color: white;
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.741);
   font-size: 1.4rem;
   border: 1px black solid;
   border-radius: 15px;
@@ -19,5 +19,6 @@
 }
 
 .btn:disabled {
-  background-color: rgb(2, 58, 2);
+  background-color: rgb(83 141 78);
+  color: white;
 }

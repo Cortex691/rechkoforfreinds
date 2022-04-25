@@ -17,6 +17,7 @@ const StartPage = () => {
   const [isLinkCopied, setIsLinkCopied] = useState(false);
   const [errorWord, setErrorWord] = useState(false);
   const [errorName, setErrorName] = useState(false);
+  const [errorWordGl, setErrorWordGl] = useState(false);
   const enteredWordRef = useRef();
   const enteredNameRef = useRef();
 
@@ -27,11 +28,93 @@ const StartPage = () => {
   }
 
   const wordSubmitHandler = async (event) => {
+    const latinica = [
+      "q",
+      "w",
+      "e",
+      "r",
+      "t",
+      "y",
+      "u",
+      "i",
+      "o",
+      "p",
+      "a",
+      "s",
+      "d",
+      "f",
+      "g",
+      "h",
+      "j",
+      "k",
+      "l",
+      "z",
+      "x",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+      "Q",
+      "W",
+      "E",
+      "R",
+      "T",
+      "Y",
+      "U",
+      "I",
+      "O",
+      "P",
+      "A",
+      "S",
+      "D",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      "Z",
+      "X",
+      "C",
+      "V",
+      "B",
+      "N",
+      "M",
+      "š",
+      "Š",
+      "đ",
+      "Đ",
+      "ž",
+      "Ž",
+      "č",
+      "Č",
+      "ć",
+      "Ć",
+    ];
     event.preventDefault();
 
     const enteredWord = enteredWordRef.current.value;
 
-    if (validWords.includes(enteredWord.toLowerCase())) {
+    if (latinica.some((slovo) => enteredWord.includes(slovo))) {
+      setErrorWordGl(true);
+      setErrorWord(false);
+      setTimeout(() => {
+        setErrorWordGl(false);
+      }, 3000);
+    } else if (
+      !latinica.some((slovo) => enteredWord.includes(slovo)) &&
+      !validWords.includes(enteredWord.toLowerCase())
+    ) {
+      setErrorWordGl(false);
+      setErrorWord(true);
+      setTimeout(() => {
+        setErrorWord(false);
+      }, 3000);
+    } else if (
+      !latinica.some((slovo) => enteredWord.includes(slovo)) &&
+      validWords.includes(enteredWord.toLowerCase())
+    ) {
       const wordForNum = await decrypt(enteredWord);
       const encryptedWord = encode(wordForNum);
 
@@ -39,12 +122,47 @@ const StartPage = () => {
       setShowWordBtn(false);
 
       setErrorWord(false);
-    } else {
-      setErrorWord(true);
-      setTimeout(() => {
-        setErrorWord(false);
-      }, 3000);
     }
+
+    // if (latinica.some((slovo) => enteredWord.includes(slovo))) {
+    //   setErrorWordGl(true);
+    //   setTimeout(() => {
+    //     setErrorWordGl(false);
+    //   }, 3000);
+    // }
+    // if (
+    //   !latinica.some((slovo) => enteredWord.includes(slovo)) &&
+    //   validWords.includes(enteredWord.toLowerCase())
+    // ) {
+    //   const wordForNum = await decrypt(enteredWord);
+    //   const encryptedWord = encode(wordForNum);
+
+    //   setWord(encryptedWord);
+    //   setShowWordBtn(false);
+
+    //   setErrorWord(false);
+    // }
+    // if (!validWords.includes(enteredWord.toLowerCase())) {
+    //   setErrorWord(true);
+    //   setTimeout(() => {
+    //     setErrorWord(false);
+    //   }, 3000);
+    // }
+
+    //   if (validWords.includes(enteredWord.toLowerCase())) {
+    //     const wordForNum = await decrypt(enteredWord);
+    //     const encryptedWord = encode(wordForNum);
+
+    //     setWord(encryptedWord);
+    //     setShowWordBtn(false);
+
+    //     setErrorWord(false);
+    //   } else {
+    //     setErrorWord(true);
+    //     setTimeout(() => {
+    //       setErrorWord(false);
+    //     }, 3000);
+    //   }
   };
 
   const nameSubmitHandler = (event) => {
@@ -54,7 +172,6 @@ const StartPage = () => {
 
     if (enteredName) {
       setName(enteredName);
-
       setShowNameBtn(false);
     } else {
       setErrorName(true);
@@ -75,9 +192,28 @@ const StartPage = () => {
 
   return (
     <Layout>
-      <Paragraph>Направите Речко игру користећи вашу ријеч!</Paragraph>
-      <Paragraph>Унесите ријеч са 5 слова.</Paragraph>
-      <Note className={classes.note}>*Ријеч мора бити унијета ћирилицом.*</Note>
+      <Paragraph>
+        Направите{" "}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open("https://rechko.com/", "_blank");
+          }}
+          formTarget="_blank"
+          className={classes.rechko}
+        >
+          Речко
+        </button>{" "}
+        игру <br></br> користећи вашу ријеч!
+      </Paragraph>
+      <p className={classes.para}>Унесите ријеч са 5 слова.</p>
+      {/* <Paragraph>Унесите ријеч са 5 слова.</Paragraph> */}
+      {errorWordGl && (
+        <Note className={classes.note}>
+          *Ријеч мора бити унијета ћирилицом.*
+        </Note>
+      )}
       {errorWord && (
         <Note className={classes.note}>*Ријеч није на листи.*</Note>
       )}
@@ -113,10 +249,24 @@ const StartPage = () => {
       )}
       {isLinkCopied && (
         <React.Fragment>
-          <Paragraph>Линк за игру је креиран и копиран.</Paragraph>
-          <Paragraph>Пошаљите га својим пријатељима!</Paragraph>
+          <p className={classes.para}>Линк за игру је креиран и копиран.</p>
+          <p className={classes.para}>Пошаљите га својим пријатељима!</p>
         </React.Fragment>
       )}
+      <p className={classes.para1}>
+        by
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open("https://nd-portfolio.netlify.app/", "_blank");
+          }}
+          formTarget="_blank"
+          className={classes.cortex}
+        >
+          cortex
+        </button>
+      </p>
     </Layout>
   );
 };

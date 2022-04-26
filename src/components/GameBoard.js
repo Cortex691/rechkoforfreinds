@@ -173,7 +173,7 @@ const GameBoard = (props) => {
 
   return (
     <div className="container">
-      <p className="para">Ријешите ријеч коју вам је задао/ла {props.name}</p>
+      <p className="para">Ријешите ријеч коју вам је задао/ла {props.name}.</p>
       {message && <div className="message">{message}</div>}
       {modalMsg && (
         <Modal

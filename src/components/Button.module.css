@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
 .body {
+  font-family: "Playfair Display", serif;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -8,17 +11,24 @@
 .btn {
   display: flex;
   justify-content: center;
-  width: 20rem;
+  width: 469px;
   height: 60px;
   background-color: whitesmoke;
   color: rgba(0, 0, 0, 0.741);
   font-size: 1.4rem;
   border: 1px black solid;
-  border-radius: 15px;
+  border-radius: 5px;
   text-decoration: none;
 }
 
 .btn:disabled {
-  background-color: rgb(83 141 78);
+  background-color: #228a47;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    width: 95vw;
+    height: 60px;
+  }
 }

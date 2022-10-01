@@ -6,8 +6,12 @@ import "../App.css";
 import Keyboard from "./Keyboard";
 import Modal from "./Modal";
 
+import win from "../assets/win.png";
+import lost from "../assets/lost.png";
+
 const GameBoard = (props) => {
   const [modalMsg, setModalMsg] = useState(null);
+  const [modalIcon, setModalIcon] = useState(null);
   const [boardData, setBoardData] = useState(
     JSON.parse(localStorage.getItem(`board-data-${props.targetWord}`))
   );
@@ -88,9 +92,11 @@ const GameBoard = (props) => {
       status = "WIN";
 
       setModalMsg("Браво!");
+      setModalIcon(win);
     } else if (rowIndex + 1 === 6) {
       status = "LOST";
       setModalMsg("Изгубили сте.");
+      setModalIcon(lost);
     }
     boardRowStatus.push(rowStatus);
     boardWords[rowIndex] = word;
@@ -169,6 +175,7 @@ const GameBoard = (props) => {
 
   const closeModal = () => {
     setModalMsg();
+    setModalIcon();
   };
 
   return (
@@ -179,6 +186,7 @@ const GameBoard = (props) => {
         <Modal
           closeModal={closeModal}
           message={modalMsg}
+          icon={modalIcon}
           word={props.targetWord}
         ></Modal>
       )}

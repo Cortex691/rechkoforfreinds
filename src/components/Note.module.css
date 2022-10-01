@@ -1,6 +1,14 @@
 .note {
   display: flex;
   justify-content: center;
-  color: red;
-  font-size: 0.7rem;
+  color: #ff9494;
+  font-size: 15px;
+  font-weight: semi-bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .note {
+    font-size: 12px;
+    font-weight: semi-bold;
+  }
 }

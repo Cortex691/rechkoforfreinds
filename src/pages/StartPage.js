@@ -205,7 +205,7 @@ const StartPage = () => {
         >
           Речко
         </button>{" "}
-        игру <br></br> користећи вашу ријеч!
+        игру користећи вашу ријеч!
       </Paragraph>
       <p className={classes.para}>Унесите ријеч са 5 слова.</p>
       {/* <Paragraph>Унесите ријеч са 5 слова.</Paragraph> */}
@@ -249,24 +249,12 @@ const StartPage = () => {
       )}
       {isLinkCopied && (
         <React.Fragment>
-          <p className={classes.para}>Линк за игру је креиран и копиран.</p>
-          <p className={classes.para}>Пошаљите га својим пријатељима!</p>
+          <p className={classes.para_down}>
+            Линк за игру је креиран и копиран. <br /> Пошаљите га својим
+            пријатељима!
+          </p>
         </React.Fragment>
       )}
-      <p className={classes.para1}>
-        by
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            window.open("https://nd-portfolio.netlify.app/", "_blank");
-          }}
-          formTarget="_blank"
-          className={classes.cortex}
-        >
-          cortex
-        </button>
-      </p>
     </Layout>
   );
 };

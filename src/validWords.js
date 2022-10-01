@@ -6928,6 +6928,7 @@ const validWords = [
   "жваче",
   "жвачи",
   "жвачу",
+  "циган",
 ];
 
 export default validWords;

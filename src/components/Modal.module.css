@@ -2,11 +2,13 @@
 
 .container {
   /* background-color: rgb(129 131 132); */
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
   border: rgb(129 131 132) transparent solid;
   border-radius: 20px;
   width: 250px;
-  height: 180px;
+  height: 300px;
   margin-top: 90px;
   position: absolute;
 }
@@ -18,7 +20,7 @@
 }
 
 .btn {
-  font-family: "Inter", sans-serif;
+  font-family: "Playfair Display", serif;
   display: flex;
   margin: auto;
   background-color: #538d4e;
@@ -39,4 +41,11 @@
   margin-top: 15px;
   margin-left: 15px;
   cursor: pointer;
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  margin-left: 92.5px;
+  margin-top: 45px;
 }

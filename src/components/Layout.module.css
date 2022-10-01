@@ -1,15 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+.holy_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .logo {
   display: flex;
   justify-content: center;
   color: white;
   margin: 0;
-  margin-top: 5px;
-  font-size: 2rem;
+  margin-top: 25px;
+  font-size: 35px;
+  font-family: "Playfair Display", serif;
+}
+
+.lajna {
+  margin-top: 25px;
+  width: 100vw;
+}
+
+.para1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 65px;
+}
+
+.cortex_1 {
+  font-family: "Playfair Display", serif;
+  background-color: transparent;
+  text-decoration: underline;
+  color: white;
+  font-size: 15px;
+  padding: 0;
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 600px) {
   .logo {
-    font-size: 15px;
-    margin-top: 5px;
+    font-size: 25px;
+    margin-top: 18px;
+  }
+
+  .lajna {
+    margin-top: 18px;
   }
 }
